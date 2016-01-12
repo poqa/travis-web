@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import DS from 'ember-data';
+import JSONSerializer from 'ember-data/serializers/json'
 
 var traverse = function(object, callback) {
   if(!object) {
@@ -24,7 +24,7 @@ var traverse = function(object, callback) {
   }
 };
 
-export default DS.JSONSerializer.extend({
+export default JSONSerializer.extend({
   isNewSerializerAPI: true,
 
   extractRelationship(type, hash) {
